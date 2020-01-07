@@ -1,0 +1,16 @@
+SCRIPT=`realpath -s $0`
+PROJECTROOT=`dirname $SCRIPT`
+
+#
+# Config
+#
+
+PG_CONTAINER_NAME="postgres"
+PG_CONTAINER_HOSTNAME="postgres"
+PG_VERSION="12.1-alpine"
+PG_NETWORK_NAME="nginx-proxy-net"
+PG_CUSTOM_SUPERUSER_PASSWORD="XXXXXXXXXXXXXXXXXXX"
+PG_DATA_VOLUME_PATH=$PROJECTROOT/volumes/postgres_data
+
+# Helper function. Prints commands before output
+exe() { echo -e "\n$(tput setaf 6)$@$(tput sgr0)" ; "$@" ; }
