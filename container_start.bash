@@ -8,8 +8,8 @@ exe chmod 777 $PG_DATA_VOLUME_PATH
 # Run container
 
 exe docker run \
-  --rm \
   --detach \
+  --restart always \
   -p $PG_EXPOSED_PORT:5432 \
   -e POSTGRES_USER=$PG_CUSTOM_SUPERUSER_NAME \
   -e POSTGRES_PASSWORD=$PG_CUSTOM_SUPERUSER_PASSWORD \
